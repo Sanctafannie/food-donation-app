@@ -1,0 +1,169 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    background: url("/static/bg.jpg.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ===== DARK OVERLAY ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+/* Make all content appear above overlay */
+.container,
+.navbar,
+table,
+h1, h2,
+.title {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== CONTAINER CARD ===== */
+.container {
+    width: 400px;
+    margin: 60px auto;
+    background: rgba(22, 16, 16, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+    color: #ffffff;
+}
+
+/* ===== INPUTS ===== */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00c6ff;
+}
+
+/* ===== LINKS ===== */
+a {
+    text-decoration: none;
+}
+
+/* ===== TABLE DESIGN ===== */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #4facfe;
+    color: white;
+}
+
+/* ===== HOME PAGE TITLE ===== */
+.title {
+    font-family: "Times New Roman", serif;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+/* ===== BIG COLORFUL BUTTONS ===== */
+.btn {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: #000;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.hotel { background: #f6f1f1; }
+.ngo { background: #ecebf1; }
+.food { background: #f2f4f3; }
+.view { background: #f5f3f1; }
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar a {
+
+    color: white !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ===== CENTER EVERYTHING ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    background: url("/static/bg.jpg.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical center */
+    align-items: center;       /* horizontal center */
+    text-align: center;        /* center text */
+}
+
+

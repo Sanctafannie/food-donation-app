@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NGO Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("/static/bg.jpg.jpg")no-repeat center center fixed;
+            background-size: cover;
+
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 40px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #5b86e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #f5f6f8;
+        }
+
+        .claimed {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NGO Dashboard
+        <div class="navbar">
+           <a href="/"> Home</a>
+        </div>
+    </h1>
+
+    <h2>Available Food</h2>
+
+    {% for food in available_food %}
+    <div class="card">
+        <p><strong>Food:</strong> {{ food.food_type }}</p>
+        <p><strong>Quantity:</strong> {{ food.quantity }}</p>
+        <p><strong>Pickup Time:</strong> {{ food.pickup_time }}</p>
+        <a class="btn" href="/claim/{{ food.id }}/{{ ngo_id }}">Claim</a>
+    </div>
+    {% endfor %}
+
+    <h2>Your Claimed Food</h2>
+
+    {% for food in claimed_food %}
+    <div class="card">
+        <p><strong>Food:</strong> {{ food.food_type }}</p>
+        <p><strong>Quantity:</strong> {{ food.quantity }}</p>
+        <p><strong>Pickup Time:</strong> {{ food.pickup_time }}</p>
+        <p class="claimed">Claimed Successfully</p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

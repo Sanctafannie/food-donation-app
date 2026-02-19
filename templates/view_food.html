@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Food</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2 style="text-align:center; color:rgb(248, 244, 244); margin-top:20px;">📋 Available Food</h2>
+
+<table>
+<tr>
+<th>ID</th><th>Food</th><th>Qty</th><th>Time</th><th>Status</th><th>Action</th>
+</tr>
+
+{% for post in food_posts %}
+<tr>
+<td>{{ post.id }}</td>
+<td>{{ post.food_type }}</td>
+<td>{{ post.quantity }}</td>
+<td>{{ post.pickup_time }}</td>
+<td>{{ post.status }}</td>
+<td>
+{% if post.status == "Available" %}
+<a href="/claim/{{ post.id }}" class="btn hotel" style="width:auto;padding:8px;">Claim</a>
+{% else %}
+Claimed
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<div style="text-align:center;">
+    <a href="/" class="btn ngo" style="width:200px;">⬅ Back Home</a>
+</div>
+
+</body>
+</html>

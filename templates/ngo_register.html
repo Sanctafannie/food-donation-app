@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NGO Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>🏥 NGO Registration</h2>
+
+    <form method="POST">
+       <input name="name" placeholder="NGO Name" required>
+       <input name="area" placeholder="Service Area" required>
+       <input name="phone" placeholder="Phone Number" required>
+       <input type="password" name="password" placeholder="Create Password" required>
+       <button type="submit">Register NGO</button>
+    </form>
+
+
+    <a href="/">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
